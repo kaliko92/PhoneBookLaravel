@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Models\Person;
+use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\PersonRequest;
@@ -62,6 +63,12 @@ class PersonController extends Controller
     // used in bill1, day, entry
     public function destroy($id)
     {     
+
+        $contacts = Contact::where('personId', $id)->get();
+        foreach ($contacts as $conn) {
+            $conn->delete();
+        }
+
         $person = Person::find($id);
         // $existBill = Bill1::where('customerId', $id)->get();
         // if (count($existBill) != 0) {

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PersonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('admin')->group(function(){
+    Route::prefix('person')->group(function () {
+        Route::get('/', [PersonController::class, 'index']);   
+        Route::get('{id}', [PersonController::class, 'show']);
+    });
 });

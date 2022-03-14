@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+}
+
+.header .nav .container {
+  overflow: hidden;
+  background-color: #333;
+}
+.header .nav .container a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  list-style-type: none;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.header .nav .container a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.header .nav .container a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+.header .nav .container .right {
+  float: right;
+}
+
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.content {
+  width: 75%;
+  margin: auto;
+}
+.content .slider .container {
+  height: 400px;
+  width: 100%;
+  background-color: yellowgreen;
+  border: 5px;
+}
+.content .path {
+  margin-top: 10px;
+}
+.content .products {
+  text-align: center;
+}
+.content .products .product {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+.content .products .product .center {
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: larger;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.content .products .square250 {
+  height: 250px;
+  width: 250px;
+  background-color: brown;
+  border: 5px;
+}
+.content .products img {
+  height: 250px;
+  width: 250px;
+  background-color: brown;
+  border: 5px;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+}
+.footer .copyright {
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  vertical-align: middle;
+  color: #f2f2f2;
+  background-color: #333;
+  text-align: center;
+}
