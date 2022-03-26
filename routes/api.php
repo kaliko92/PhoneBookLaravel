@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::prefix('people/person')->group(function(){
+Route::prefix('person')->group(function(){
     Route::get('/', [PersonController::class, 'index']);
     Route::get('{id}', [PersonController::class, 'show']);
 
@@ -31,7 +31,7 @@ Route::prefix('people/person')->group(function(){
     Route::delete('{id}', [PersonController::class, 'destroy']);
 });
 
-Route::prefix('contacts/contact')->group(function(){
+Route::prefix('contact')->group(function(){
     Route::get('/', [ContactController::class, 'index']);
     Route::get('{id}', [ContactController::class, 'show']);
 
