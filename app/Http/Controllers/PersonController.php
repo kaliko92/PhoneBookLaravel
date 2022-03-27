@@ -9,7 +9,7 @@ class PersonController extends Controller
 {
     public function index()
     {       
-        $data['people'] = Person::paginate(20);
+        $data['people'] = Person::paginate(5);
         return view('admin.person.index', $data);
     }
     

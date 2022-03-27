@@ -21,7 +21,7 @@ write this command in visual code
 then try write previews command again -->
 
 
-# in postman
+# Rest API
 <!-- - login with this json raw
 {
     "email":"omar@hotmail.com",

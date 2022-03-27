@@ -3,11 +3,11 @@
 @section('title', 'People')
     
 @section('content')
-    <div class="container mt-3">
-        <h1 class="text-center">People</h1>
+    <section class="container">
+        <h1 class="large text-primary">People</h1>
 
         <table class="table">
-            <thead class="table-secondary">
+            <thead>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
@@ -38,13 +38,21 @@
             
         </table>
 
+        <div class="text-center">
+            {{ $people->links(); }}
+
+        </div>
+
         {{-- @if ($accessAddPerson) --}}
-            <a id="btnCreate" href="javascript:void(0)" class="add-category btn btn-primary"><i class="fa fa-plus"></i> Add new person</a>
+            {{-- <a id="btnCreate" href="javascript:void(0)" class="add-category btn btn-primary"><i class="fa fa-plus"></i> Add new person</a> --}}
+        <a id="btnCreate" href="javascript:void(0)" class="btn">
+            <i class="fa fa-plus text-primary"></i> Add new person
+        </a>
         {{-- @endif --}}
         {{-- @if ($accessAddPerson || $accessUpdatePerson)
             @include('admin.person.createModal',['people' => $people])
         @endif --}}
-    </div>
+    </section>
 @endsection 
 
 
