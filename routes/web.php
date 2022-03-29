@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 // use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PersonController;
 
 /*
@@ -17,15 +18,22 @@ use App\Http\Controllers\PersonController;
 */
 
 Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect('admin/person');
+    }
     return view('welcome');
 });
 
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->middleware('auth')->group(function(){
     Route::prefix('person')->group(function () {
         Route::get('/', [PersonController::class, 'index']);   
         Route::get('{id}', [PersonController::class, 'show']);
     });
+    Route::prefix('profile')->group(function () {
+        Route::get('/', [UserController::class, 'show']);   
+        // Route::get('{id}', [PersonController::class, 'show']);
+    });
 });
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -15,7 +15,6 @@ class ContactController extends Controller
     {
         $contact = Contact::all();
         return $this->ResponseSuccess(200, $contact);
-        // return response()->json($contact, 200);
     }
 
     public function show($id)
@@ -23,10 +22,8 @@ class ContactController extends Controller
         $contact = Contact::find($id);
         if(is_null($contact)){
             return $this->ResponseFailure(404, "Record not found!");
-            // return response()->json(['message'=>'Record not found!'], 404);
         }
         return $this->ResponseSuccess(200, $contact);
-        // return response()->json($contact, 200) ;
     }
 
     public function store(ContactRequest $request)
@@ -38,7 +35,6 @@ class ContactController extends Controller
         ]);
 
         return $this->ResponseSuccess(201, $newContact);
-        // return response()->json($newContact, 201);       
     }
 
     public function update(ContactRequest $request, $id)
@@ -47,7 +43,6 @@ class ContactController extends Controller
 
         if(is_null($contact)){
             return $this->ResponseFailure(404, "Record not found!");
-            // return response()->json(['message'=>'Record not found!'], 404);
         }
 
         $contact->update([            
@@ -58,21 +53,12 @@ class ContactController extends Controller
         $contact->save();
 
         return $this->ResponseSuccess(200, $contact);
-        // return response()->json($contact, 200);        
     }  
 
 
-    // used in bill1, day, entry
     public function destroy($id)
     {     
         $contact = Contact::find($id);
-        // $existBill = Bill1::where('customerId', $id)->get();
-        // if (count($existBill) != 0) {
-        //     return response()->json(["message"=> "This record is used!"], 404);
-        // }
-        // if (is_null($contact)) {
-        //     return response()->json(["message"=> "record not found!"], 404);
-        // }
         $contact->delete();
     
         return $this->ResponseSuccess(204, $contact::all());

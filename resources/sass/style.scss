@@ -34,7 +34,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.7rem 2rem;
+  padding: 0.5rem 2rem;
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -42,8 +42,13 @@ img {
   border-bottom: solid 1px $primary-color;
   opacity: 0.9;
 
+  h1 {
+    margin: auto 0;
+    font-size: xx-large;
+  }
   ul {
     display: flex;
+    margin: auto 0;
   }
 
   a {
@@ -53,6 +58,7 @@ img {
 
     &:hover {
       color: $primary-color;
+      text-decoration: none;
     }
   }
 }
@@ -191,5 +197,6 @@ img {
   }
 }
 
+@import 'paginate';
 @import 'table';
 @import 'mobile';

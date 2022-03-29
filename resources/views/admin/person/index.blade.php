@@ -4,7 +4,15 @@
     
 @section('content')
     <section class="container">
-        <h1 class="large text-primary">People</h1>
+        <div class="title-with-tools">
+            <h1 class="large text-primary">People</h1>
+            <div class="buttons">
+                <a id="btnCreate" href="javascript:void(0)" class="btn">
+                    <i class="fa fa-plus text-primary"></i> <span class="hide-sm">Add new person</span>
+                </a>
+            </div>
+            
+        </div>
 
         <table class="table">
             <thead>
@@ -21,33 +29,32 @@
                         <td>{{$person['name']}}</td>
                         {{-- Operation --}}
                         <td>
-                            {{-- show statement --}}
-                            <a href="{{'person/'.$person['id']}}" class="badge btn btn-primary btn-sm"><i class="fa fa-info-circle"></i></a>
+                            {{-- show statement --}} 
+                            {{-- badge btn btn-primary btn-sm --}}
+                            <a href="{{'person/'.$person['id']}}" class="badge badge-primary"><i class="fa fa-info-circle"></i> <span class="hide-sm">Info</span></a>
                             {{-- Edit --}}
                             <a onclick="editPerson({{$person->id}});" 
-                                class="badge btn btn-secondary btn-sm" href="javascript:void(0)"><i class="fa fa-edit"></i></a>
+                                class="badge badge-secondary" href="javascript:void(0)"><i class="fa fa-edit"></i> <span class="hide-sm">Edit</span></a>
                             {{-- Delete --}}
                             <a onclick="deletePerson({{$person->id}});" 
-                                class="badge btn btn-danger  btn-sm" href="javascript:void(0)"><i class="fa fa-ban"></i></a>
+                                class="badge badge-danger" href="javascript:void(0)"><i class="fa fa-ban"></i> <span class="hide-sm">Delete</span></a>
                         </td>
                     </tr>
                 @empty
-                    <p> 'No people yet' </p>
+                    {{-- <p> 'No people yet' </p> --}}
                 @endforelse 
             </tbody>
             
         </table>
 
+      
         <div class="text-center">
-            {{ $people->links(); }}
-
+            {{ $people->links(); }}          
         </div>
 
         {{-- @if ($accessAddPerson) --}}
             {{-- <a id="btnCreate" href="javascript:void(0)" class="add-category btn btn-primary"><i class="fa fa-plus"></i> Add new person</a> --}}
-        <a id="btnCreate" href="javascript:void(0)" class="btn">
-            <i class="fa fa-plus text-primary"></i> Add new person
-        </a>
+        
         {{-- @endif --}}
         {{-- @if ($accessAddPerson || $accessUpdatePerson)
             @include('admin.person.createModal',['people' => $people])

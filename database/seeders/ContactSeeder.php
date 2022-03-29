@@ -11,7 +11,6 @@ class ContactSeeder{
     public static function Seed(){
 
         DB::table('contact')->delete();
-        // protected $fillable = ['id', 'name', 'phone', 'note', 'debit', 'credit', 'balance', 'accountId'];
 
         $contacts = [         
 

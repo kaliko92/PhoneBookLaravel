@@ -7,7 +7,7 @@
           @auth
               
               <li><a href="{{url('admin/person')}}">People</a></li>
-              <li><a href="profiles.html">Profile</a></li>
+              <li><a href="{{url('admin/profile')}}">Profile</a></li>
               <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a></li>
               <form id="logout-form" action="{{ route('logout') }}" method="POST">@csrf</form>
               {{-- <li><a href="search.html">Profile</a></li> --}}

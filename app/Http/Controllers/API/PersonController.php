@@ -16,7 +16,6 @@ class PersonController extends Controller
     {
         $person = Person::all();
         return $this->ResponseSuccess(200, $person);
-        // return response()->json($person, 200);
     }
 
     public function show($id)
@@ -24,10 +23,8 @@ class PersonController extends Controller
         $person = Person::find($id);
         if(is_null($person)){
             return $this->ResponseFailure(404, "Record not found!");
-            // return response()->json(['message'=>'Record not found!'], 404);
         }
         return $this->ResponseSuccess(200, $person);
-        // return response()->json($person, 200) ;
     }
 
     public function store(PersonRequest $request)
@@ -37,7 +34,6 @@ class PersonController extends Controller
         ]);
 
         return $this->ResponseSuccess(201, $newPerson);
-        // return response()->json($newPerson, 201);       
     }
 
     public function update(PersonRequest $request, $id)
@@ -46,7 +42,6 @@ class PersonController extends Controller
 
         if(is_null($person)){
             return $this->ResponseFailure(404, "Record not found!");
-            // return response()->json(['message'=>'Record not found!'], 404);
         }
 
         $person->update([            
@@ -56,11 +51,9 @@ class PersonController extends Controller
         $person->save();
 
         return $this->ResponseSuccess(200, $person);
-        // return response()->json($person, 200);        
     }  
 
 
-    // used in bill1, day, entry
     public function destroy($id)
     {     
 
@@ -68,19 +61,10 @@ class PersonController extends Controller
         foreach ($contacts as $conn) {
             $conn->delete();
         }
-
         $person = Person::find($id);
-        // $existBill = Bill1::where('customerId', $id)->get();
-        // if (count($existBill) != 0) {
-        //     return response()->json(["message"=> "This record is used!"], 404);
-        // }
-        // if (is_null($person)) {
-        //     return response()->json(["message"=> "record not found!"], 404);
-        // }
         $person->delete();
     
         return $this->ResponseSuccess(204, $person::all());
-        // return response()->json($person::all(),204);
     }
 
     public function ResponseFailure($status, $failureMessage, $failureResult=[])

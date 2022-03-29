@@ -11,7 +11,6 @@ class PersonSeeder{
     public static function Seed(){
 
         DB::table('person')->delete();
-        // protected $fillable = ['id', 'name', 'phone', 'note', 'debit', 'credit', 'balance', 'accountId'];
 
         $people = [         
 
