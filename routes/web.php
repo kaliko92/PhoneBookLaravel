@@ -31,9 +31,7 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     });
     Route::prefix('profile')->group(function () {
         Route::get('/', [UserController::class, 'show']);   
-        // Route::get('{id}', [PersonController::class, 'show']);
     });
 });
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

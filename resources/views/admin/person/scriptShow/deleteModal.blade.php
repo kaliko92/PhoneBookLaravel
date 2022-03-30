@@ -1,18 +1,19 @@
 <script>
-    function deletePerson(id){
+    function deleteContact(id){        
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
 
+        var personId = $('#personId').val();        
+
         if(confirm("Are you sure want to delete!")){
             $.ajax({
                 type:"DELETE",
-                url: "{{ url('api/people/person') }}" + "/" + id,
+                url: "{{ url('api/contact') }}" + "/" + id,
                 success: function(data){
-                    // $("#post_id_"+id).remove();
-                    window.location.replace("{{ url('admin/person/') }}");
+                    window.location.replace("{{ url('admin/person/') }}" + "/" + personId);
                 },
                 error: function(data){
                     console.log('Error:', data);

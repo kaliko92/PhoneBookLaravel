@@ -9,9 +9,8 @@
         if(confirm("Are you sure want to delete!")){
             $.ajax({
                 type:"DELETE",
-                url: "{{ url('api/person/delete/') }}" + "/" + id,
+                url: "{{ url('api/person') }}" + "/" + id,
                 success: function(data){
-                    // $("#post_id_"+id).remove();
                     window.location.replace("{{ url('admin/person/') }}");
                 },
                 error: function(data){

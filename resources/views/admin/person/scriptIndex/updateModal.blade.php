@@ -1,18 +1,17 @@
 <script>
-    function SaveSubmit(){
+    function UpdateSubmit(){
+        var id = $('#personId').val();
         var name = $('#txtName').val();
-        var phone = $('#txtPhone').val();                
-        var note = $('#txtNote').val();
-
+        var _token = $('meta[name="csrf-token"]').attr('content');
         $.ajax({
-            // data: $('#form').serialize(),
             data: {
+                id:id,
+                _token:_token,                            
                 name: name,
-                phone: phone,
-                note: note
             },
-            url: "{{ url('api/person/store') }}",
-            type: "POST",
+            url: "{{ url('api/person') }}" + "/" + id,
+            type: "PUT",
+            cache:false,
             dataType: 'json',
             success: function(data){
                 $('#form').trigger('reset');
@@ -33,5 +32,5 @@
             }
         });
     }
-   
+    
 </script>

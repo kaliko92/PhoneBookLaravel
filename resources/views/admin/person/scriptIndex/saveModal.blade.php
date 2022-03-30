@@ -1,23 +1,17 @@
 <script>
     function SaveSubmit(){
         var name = $('#txtName').val();
-        var phone = $('#txtPhone').val();                
-        var note = $('#txtNote').val();
 
         $.ajax({
-            // data: $('#form').serialize(),
             data: {
-                name: name,
-                phone: phone,
-                note: note
+                name: name
             },
-            url: "{{ url('api/person/store') }}",
+            url: "{{ url('api/person') }}",
             type: "POST",
             dataType: 'json',
             success: function(data){
                 $('#form').trigger('reset');
                 $('#modal').modal('hide');
-                // adding to treeview with id or code
                 window.location.replace("{{ url('admin/person/') }}");
             },
             error: function(data){

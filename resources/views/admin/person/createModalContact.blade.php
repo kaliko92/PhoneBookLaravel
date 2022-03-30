@@ -1,27 +1,35 @@
-{{-- 
-    moadl = main modal
-    modalTitle
-    modalBody
-    form
-    --}}
-
 <div class="modal fade" id="modal"  aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="modalTitle">Add Person</h4>
+                <h4 class="modal-title" id="modalTitle">Add Contact</h4>
             </div>
             <div class="modal-body">
                 <form id="form" name="form" class="form-horizontal">
-                    <input type="hidden" name="personId" id="personId">
+                    <input type="hidden" name="personId" id="personId" value="{{$person->id}}">
+                    <input type="hidden" name="contactId" id="contactId">
+
 
                     <div class="form-group">
-                        <label for="txtName" class="col-sm-2 control-label">Name</label>
+                        <label for="slctType" class="col-sm-6 control-label">Type</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="txtName" name="txtName" value="" required="">
+                            <select name="slctType" id="slctType" class="form-control"  aria-label="Default select example">
+                                <option value="phone">Phone</option>
+                                <option value="email">Email</option>
+                                <option value="fax">Fax</option>                               
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtValue" class="col-sm-2 control-label">Value</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="txtValue" name="txtValue" value="" required="">
                         </div>
                     </div>
                 
+
+                    
 
                     <div class="form-group">
                         <div id="alert"  class="alert alert-danger" style="display:none;">

@@ -17,8 +17,6 @@
                 </a>
             </div>            
         </div>
-        {{-- <h1 class="text-center">{{$person['name']}}</h1> --}}
-        {{-- <p><b>Category : </b>{{$category['name']}}</p> --}}
         <table class="table">
             <thead>
                 <tr>
@@ -32,27 +30,31 @@
                 @forelse ($contacts as $conn)                    
                     <tr>
                         <td>{{$conn->id}}</td>
-                        <td>{{$conn->type}}</td>
+                        <td>{{ucfirst($conn->type)}}</td>
                         <td>{{$conn->value}}</td>
                         <td>                            
-                            <a href="{{'../contact/'.$conn['id']}}" class="badge badge-danger"><i class="fa fa-ban"></i> <span class="hide-sm">Delete</span></a>
-                            <a href="{{'../contact/'.$conn['id']}}"  class="badge badge-secondary"><i class="fa fa-edit"></i> <span class="hide-sm">Edit</span></a>
+                            <a href="javascript:void(0)" onclick="editContact({{$conn->id}});"    class="badge badge-secondary"><i class="fa fa-edit"></i> <span class="hide-sm">Edit</span></a>
+                            <a href="javascript:void(0)" onclick="deleteContact({{$conn->id}});"  class="badge badge-danger"><i class="fa fa-ban"></i> <span class="hide-sm">Delete</span></a>
                         </td>
                     </tr>
                 @empty
                     {{-- <p> 'No operation yet' </p> --}}
                 @endforelse
-            </tbody>
-            
+            </tbody>            
         </table>
-
-
-        {{-- @forelse($contacts)
-        @empty
-            <p> 'No people yet' </p>
-        @endforelse --}}
-        {{-- <a href="{{ url('admin/person') }}" class="add-category btn btn-primary"><i class="fa fa-undo"></i> Return to list</a>  --}}
-
-
     </section>
+
+    @include('admin.person.createModalContact',['contacts' => $contacts, 'person'=>$person])
 @endsection 
+
+
+
+
+@section('script')
+    @include('admin.person.scriptShow.autocomplete') 
+    @include('admin.person.scriptShow.showModal') 
+    @include('admin.person.scriptShow.editModal') 
+    @include('admin.person.scriptShow.saveModal') 
+    @include('admin.person.scriptShow.updateModal') 
+    @include('admin.person.scriptShow.deleteModal')       
+@endsection

@@ -1,19 +1,22 @@
 <script>
     function UpdateSubmit(){
-        var id = $('#personId').val();
-        var name = $('#txtName').val();
-        var phone = $('#txtPhone').val();                
-        var note = $('#txtNote').val();
+        var id = $('#contactId').val();
+        var personId = $('#personId').val();        
+        var type = $('#slctType').val();
+        var value = $('#txtValue').val();
         var _token = $('meta[name="csrf-token"]').attr('content');
+
+        alert(type);
+
         $.ajax({
             data: {
                 id:id,
                 _token:_token,                            
-                name: name,
-                phone: phone,
-                note: note
+                type: type,
+                value: value,
+                personId: personId,
             },
-            url: "{{ url('api/person/update') }}" + "/" + id,
+            url: "{{ url('api/contact') }}" + "/" + id,
             type: "PUT",
             cache:false,
             dataType: 'json',
@@ -21,7 +24,7 @@
                 $('#form').trigger('reset');
                 $('#modal').modal('hide');
                 // adding to treeview with id or code
-                window.location.replace("{{ url('admin/person/') }}");
+                window.location.replace("{{ url('admin/person/') }}" + "/" + personId);
             },
             error: function(data){
                 console.log('Error:', data);                    

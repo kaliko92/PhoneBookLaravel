@@ -47,9 +47,9 @@ class ContactRequest extends FormRequest
     public function messages()
     {
         return [
-            'type.required'=> 'The name is required',
-            'value.required'=> 'The name is required',
-            'personId.required'=> 'The name is required',
+            'type.required'=> 'The type is required',
+            'value.required'=> 'The value is required',
+            'personId.required'=> 'The person is required',
             // 'name.unique'=> 'The name is repeated',
         ];
     }
