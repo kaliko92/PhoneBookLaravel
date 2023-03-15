@@ -15,7 +15,8 @@
             $('#contactId').val(data.successResult.id);
             // alert(id);
             // $('#slctType').val(data.successResult.type);
-            $('#slctType').val(data.successResult.type.toLowerCase());
+            //$('#slctContactType').val(data.successResult.contactTypeId.toLowerCase()); --}}
+            $('#slctContactType').val(data.successResult.contactTypeId);
 
             // alert($('#slctType').options.length.toString());
             // for (let index = 0; index < $('#slctType').options.length; index++) {

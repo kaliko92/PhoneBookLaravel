@@ -10,7 +10,7 @@ class ContactType extends Model
 {
     use HasFactory;
 
-    protected $table = 'contactType';
+    protected $table = 'contacttype';
     public $timestamps = false;
     protected $fillable = ['id', 'name', 'icon'];
     

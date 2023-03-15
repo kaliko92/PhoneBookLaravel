@@ -16,25 +16,25 @@ class ContactTypeSeeder{
 
             [
                 'id' => '1',
-                'type' => 'phone'
+                'name' => 'phone'
             ],[
                 'id' => '2',
-                'type' => 'email'
+                'name' => 'email'
             ],[
                 'id' => '3',
-                'type' => 'facebook'
+                'name' => 'facebook'
             ],[
                 'id' => '4',
-                'type' => 'twitter'
+                'name' => 'twitter'
             ],[
                 'id' => '5',
-                'type' => 'instgram'
+                'name' => 'instgram'
             ],[
                 'id' => '6',
-                'type' => 'tiktok'
+                'name' => 'tiktok'
             ],[
                 'id' => '7',
-                'type' => 'linkedin'
+                'name' => 'linkedin'
             ]
             
            

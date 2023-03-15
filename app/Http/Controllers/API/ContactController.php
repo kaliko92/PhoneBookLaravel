@@ -29,7 +29,7 @@ class ContactController extends Controller
     public function store(ContactRequest $request)
     {     
         $newContact = Contact::create([
-            'type' => $request->get('type'),
+            'contactTypeId' => $request->get('contactTypeId'),
             'value' => $request->get('value'),
             'personId' => $request->get('personId'),
         ]);
@@ -46,7 +46,7 @@ class ContactController extends Controller
         }
 
         $contact->update([            
-            'type' => $request->get('type'),
+            'contactTypeId' => $request->get('contactTypeId'),
             'value' => $request->get('value'),
             'personId' => $request->get('personId'),        ]);
 

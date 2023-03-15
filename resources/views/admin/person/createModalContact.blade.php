@@ -11,12 +11,15 @@
 
 
                     <div class="form-group">
-                        <label for="slctType" class="col-sm-6 control-label">Type</label>
+                        <label for="slctContactType" class="col-sm-6 control-label">Type</label>
                         <div class="col-sm-12">
-                            <select name="slctType" id="slctType" class="form-control"  aria-label="Default select example">
-                                <option value="phone">Phone</option>
+                            <select name="slctContactType" id="slctContactType" class="form-control"  aria-label="Default select example">
+                                {{-- <option value="phone">Phone</option>
                                 <option value="email">Email</option>
-                                <option value="fax">Fax</option>                               
+                                <option value="fax">Fax</option>                                --}}
+                                @foreach($contactTypes as $contactType)
+                                    <option value="{{$contactType->id}}">{{ucfirst($contactType->name)}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

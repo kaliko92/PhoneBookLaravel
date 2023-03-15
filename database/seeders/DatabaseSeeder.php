@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
 
         PersonSeeder::Seed();
         ContactSeeder::Seed();
+        ContactTypeSeeder::Seed();
     }
 }
