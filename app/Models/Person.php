@@ -11,7 +11,7 @@ class Person extends Model
 
     protected $table = 'person';
     public $timestamps = false;
-    protected $fillable = ['id', 'name'];
+    protected $fillable = ['id', 'name', 'image'];
     
     public function Contacts()
     {

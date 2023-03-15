@@ -12,10 +12,14 @@ class Contact extends Model
 
     protected $table = 'contact';
     public $timestamps = false;
-    protected $fillable = ['id', 'type', 'value', 'personId'];
+    protected $fillable = ['id', 'contactTypeId', 'value', 'personId'];
     
     public function person()
     {
-        return $this->hasOne(Person::class,'personId');
+        return $this->belongsTo(Person::class,'personId');
+    }
+    public function contactType()
+    {
+        return $this->belongsTo(Type::class,'contactTypeId');
     }
 }
