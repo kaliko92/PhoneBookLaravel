@@ -1,22 +1,18 @@
 <script>
     function SaveSubmit(){
-        var contactTypeId = $('#slctContactType').val();
-        var value = $('#txtValue').val();
-        var personId = $('#personId').val();
+        var name = $('#txtName').val();
 
         $.ajax({
             data: {
-                contactTypeId:contactTypeId,
-                value:value,
-                personId:personId
+                name: name
             },
-            url: "{{ url('api/contact') }}",
+            url: "{{ url('api/contactType') }}",
             type: "POST",
             dataType: 'json',
             success: function(data){
                 $('#form').trigger('reset');
                 $('#modal').modal('hide');
-                window.location.replace("{{ url('admin/person/') }}" + "/" + personId);
+                window.location.replace("{{ url('admin/contactType/') }}");
             },
             error: function(data){
                 console.log('Error:', data);                    

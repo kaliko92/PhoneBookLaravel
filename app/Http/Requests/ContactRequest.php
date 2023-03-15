@@ -26,14 +26,14 @@ class ContactRequest extends FormRequest
             case 'DELETE': {return [];}
             case 'POST': {
                 return [
-                    'type'=> 'required|max:255',
+                    'contactTypeId'=> 'required|max:255',
                     'value'=> 'required|max:255',
                     'personId'=> 'required',
                 ];
             }
             case 'PUT':{                
                 return [
-                    'type'=> 'required|max:255',
+                    'contactTypeId'=> 'required|max:255',
                     'value'=> 'required|max:255',
                     'personId'=> 'required',
                 ];

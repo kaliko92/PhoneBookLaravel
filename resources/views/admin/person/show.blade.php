@@ -30,7 +30,7 @@
                 @forelse ($contacts as $conn)                    
                     <tr>
                         <td>{{$conn->id}}</td>
-                        <td>{{ucfirst($conn->type)}}</td>
+                        <td>{{ucfirst($conn->contactType->name)}}</td>
                         <td>{{$conn->value}}</td>
                         <td>                            
                             <a href="javascript:void(0)" onclick="editContact({{$conn->id}});"    class="badge badge-secondary"><i class="fa fa-edit"></i> <span class="hide-sm">Edit</span></a>

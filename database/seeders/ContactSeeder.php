@@ -16,47 +16,47 @@ class ContactSeeder{
 
             [
                 'id' => '1',
-                'type' => 'phone',
+                'contactTypeId' => 1,
                 'value' => '03/775328',
                 'personId' => 1,
             ],[
                 'id' => '2',
-                'type' => 'phone',
+                'contactTypeId' => 1,
                 'value' => '01/032519',
                 'personId' => 1,
             ],[
                 'id' => '3',
-                'type' => 'phone',
+                'contactTypeId' => 1,
                 'value' => '03/120058',
                 'personId' => 2,
             ],[
                 'id' => '4',
-                'type' => 'email',
+                'contactTypeId' => 2,
                 'value' => 'yahyahariri25@gmail.com',
                 'personId' => 2,
             ],[
                 'id' => '5',
-                'type' => 'phone',
+                'contactTypeId' => 1,
                 'value' => '01/855521',
                 'personId' => 3,
             ],[
                 'id' => '6',
-                'type' => 'phone',
+                'contactTypeId' => 1,
                 'value' => '03/775328',
                 'personId' => 4,
             ],[
                 'id' => '7',
-                'type' => 'phone',
+                'contactTypeId' => 1,
                 'value' => '01/120011',
                 'personId' => 5,
             ],[
                 'id' => '8',
-                'type' => 'phone',
+                'contactTypeId' => 1,
                 'value' => '81/125534',
                 'personId' => 6,
             ],[
                 'id' => '9',
-                'type' => 'phone',
+                'contactTypeId' => 1,
                 'value' => '07/122221',
                 'personId' => 7,
             ]

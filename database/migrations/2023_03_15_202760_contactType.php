@@ -13,7 +13,7 @@ class ContactType extends Migration
             $table->collation = 'utf8_general_ci';
             $table->increments('id');
             $table->string('name',255);
-            $table->string('icon',255);
+            $table->string('icon',255)->nullable();
             // $table->integer('personId')->unsigned();
 
         });
